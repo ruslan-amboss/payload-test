@@ -12,6 +12,21 @@ export const PostsCollection: CollectionConfig = {
       name: 'title',
       type: 'text',
     },
+    {
+      type: 'array',
+      name: 'testPayload',
+      admin: {
+        components: {
+          Field: './collections/Posts/ArrayFieldCustom.tsx#ArrayFieldCustom', // make sure the path is correct
+        },
+      },
+      fields: [
+        {
+          name: 'itemName',
+          type: 'text',
+        },
+      ],
+    },
   ],
   versions: {
     drafts: true,
